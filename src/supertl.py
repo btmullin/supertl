@@ -1,6 +1,7 @@
 import sys
 import random
 from PySide6 import QtCore, QtWidgets, QtGui
+from WorkoutCalendar import WorkoutCalendar
 
 class MyWidget(QtWidgets.QWidget):
     def __init__(self):
@@ -20,6 +21,9 @@ class MyWidget(QtWidgets.QWidget):
         self.cal.setGridVisible(False)
 
         self.layout.addWidget(self.cal,0,0)
+
+        self.wc = WorkoutCalendar()
+        self.layout.addWidget(self.wc,0,4)
 
         self.button.clicked.connect(self.magic)
 
