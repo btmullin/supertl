@@ -15,6 +15,12 @@ This project is my hobby non-training time, "keep me out of the bars", pet proje
 
 ## Usage
 
+## Dev Environment Setup
+
+- Python 3.11
+- VENV
+- Qt 6
+
 ## Built With
 
 ## Author
