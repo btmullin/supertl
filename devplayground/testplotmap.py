@@ -54,6 +54,6 @@ sw = [lat1.min(), lon1.min()]
 ne = [lat1.max(), lon1.max()]
 m.fit_bounds([sw,ne])
 
-mapfilename = os.path.join(os.getcwd(),'map.html')
+mapfilename = os.path.join(os.getcwd(),'devplayground','map.html')
 m.save(mapfilename)
 webbrowser.open(mapfilename)
