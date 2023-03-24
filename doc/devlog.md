@@ -95,3 +95,29 @@
   - https://sites.northwestern.edu/researchcomputing/2022/02/03/what-is-the-best-interactive-plotting-package-in-python/
   - Good zooming on charts here
     - https://dash.gallery/ddk-operation-simulator/
+
+### 2023-03-20
+
+Plotting on maps
+https://towardsdatascience.com/how-to-plot-a-route-on-a-map-fb900a7f6605
+
+semicircle unit for lat/long:
+https://www.gps-forums.com/threads/explanation-sought-concerning-gps-semicircles.1072/
+
+Created testplotmap.py
+Creates a decent looking plot in an html file.  Not sure how usable long term it would be.  I'd really like something interactive with the line graphs.
+
+Started creating some actual data structures for holding an activity.
+
+### 2023-03-21
+
+Continuing development on activity data structures.  Thinking time based stuff should be in a Pandas DF.
+
+- [ ] Probably need to restructure better:
+https://docs.python.org/3/tutorial/modules.html#packages
+
+### 2023-03-23
+
+Simple goal is to start the actual UI and grow it organically.  First UI would simply be a dialog to open a file and plot the graphs and map.
+
+Looking at PyQtWebEngine to show the map.
