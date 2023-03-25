@@ -1,7 +1,8 @@
 import sys
 from PySide6 import QtCore, QtWidgets
 from PySide6.QtWebEngineWidgets import QWebEngineView
-from supertl.ui import WorkoutCalendar
+from supertl.ui import WorkoutCalendar, ActivityMapWidget
+from supertl.Data import Activity
 
 class MyWidget(QtWidgets.QWidget):
     def __init__(self):
@@ -20,12 +21,9 @@ class MyWidget(QtWidgets.QWidget):
                                      alignment=QtCore.Qt.AlignCenter)
         self.layout.addWidget(self.selected_file_text,1,1)
 
-        self.webEngineView = QWebEngineView()
-        f = open('c:/git/supertl/devplayground/map.html','r')
-        self.webEngineView.setHtml(f.read())
-        self.layout.addWidget(self.webEngineView,0,1)
+        self.map_view = ActivityMapWidget.ActivityMapWidget()
+        self.layout.addWidget(self.map_view, 0,1)
 
-        # place to render the map
         # place to render a graph
         # place to display the workout summary
 
@@ -33,11 +31,14 @@ class MyWidget(QtWidgets.QWidget):
 
     @QtCore.Slot()
     def magic(self):
-        # benbug - open file dialog
-        filechooser = QtWidgets.QFileDialog(self, caption="Select Activity File", filter="Activity Files (*.fit)")
+        filechooser = QtWidgets.QFileDialog(self,
+                                            caption="Select Activity File",
+                                            filter="Activity Files (*.fit)")
         filechooser.setFileMode(QtWidgets.QFileDialog.FileMode.ExistingFile)
-        if (filechooser.exec()):
+        if filechooser.exec():
             self.selected_file = filechooser.selectedFiles()[0]
+            activity = Activity.Activity(self.selected_file)
+            self.map_view.set_activity(activity)
         self.selected_file_text.setText(self.selected_file)
 
 if __name__ == "__main__":
