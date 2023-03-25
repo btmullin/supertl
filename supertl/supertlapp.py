@@ -1,8 +1,7 @@
 import sys
-import random
-from PySide6 import QtCore, QtWidgets, QtGui
+from PySide6 import QtCore, QtWidgets
 from PySide6.QtWebEngineWidgets import QWebEngineView
-from WorkoutCalendar import WorkoutCalendar
+from supertl.ui import WorkoutCalendar
 
 class MyWidget(QtWidgets.QWidget):
     def __init__(self):
@@ -13,7 +12,7 @@ class MyWidget(QtWidgets.QWidget):
         self.layout = QtWidgets.QGridLayout(self)
         self.layout.addWidget(self.select_activity_button,1,0)
 
-        self.workout_calendar = WorkoutCalendar()
+        self.workout_calendar = WorkoutCalendar.WorkoutCalendar()
         self.layout.addWidget(self.workout_calendar,0,0)
 
         self.selected_file = ""

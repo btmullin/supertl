@@ -3,7 +3,7 @@ from datetime import date, timedelta, time, datetime
 from typing import List, Tuple
 import os
 from garmin_fit_sdk import Decoder, Stream
-import gps_utils
+import supertl.Data.GPSUtils as GPSUtils
 import pandas as pd
 
 @dataclass
@@ -73,8 +73,8 @@ class GPSActivityData:
 
         # Global transformations post parsing
         # conversion from semicircles to degrees
-        self.time_series_data["position_lat"] = self.time_series_data["position_lat"].apply(gps_utils.semicircles_to_degrees)
-        self.time_series_data["position_long"] = self.time_series_data["position_long"].apply(gps_utils.semicircles_to_degrees)
+        self.time_series_data["position_lat"] = self.time_series_data["position_lat"].apply(GPSUtils.semicircles_to_degrees)
+        self.time_series_data["position_long"] = self.time_series_data["position_long"].apply(GPSUtils.semicircles_to_degrees)
 
         # benbug - parse summary information
 
