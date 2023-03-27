@@ -1,5 +1,5 @@
 from PySide6 import QtCore, QtWidgets
-from supertl.ui import ActivityMapWidget, SuperTLSidebarFrame, ActivityFilterSelectionWidget
+from supertl.ui import SuperTLSidebarFrame, ActivityFilterSelectionWidget, ActivityViewFrame
 from supertl.Data import Activity
 
 class SuperTLApp(QtWidgets.QWidget):
@@ -23,12 +23,8 @@ class SuperTLApp(QtWidgets.QWidget):
         self.selected_file_text.setStyleSheet("font-size: 20px;")
         self.mainview_layout.addWidget(self.selected_file_text,1,1)
 
-        self.map_view = ActivityMapWidget.ActivityMapWidget()
-        # this doesn't work
-        # self.map_view.setStyleSheet("margin: 0px 5px 10px 0px;" +
-        #                             "border: 10px solid '#FF0000';"+
-        #                             "padding: 200px 100px;")
-        self.mainview_layout.addWidget(self.map_view, 0,1)
+        self.activity_view = ActivityViewFrame.ActivityViewFrame()
+        self.mainview_layout.addWidget(self.activity_view, 0,1)
 
         self.layout.addWidget(self.mainview)
 
