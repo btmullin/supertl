@@ -4,7 +4,7 @@ from PySide6.QtWebEngineWidgets import QWebEngineView
 from supertl.Data import Activity
 import io
 
-class ActivityMapWidget(QWebEngineView):
+class ActivityMapWidget(QtWidgets.QFrame):
     """
     A widget that will visually display the gps route of an activity.
 
@@ -15,7 +15,16 @@ class ActivityMapWidget(QWebEngineView):
     def __init__(self):
         super().__init__()
 
-        self.setHtml('<H1 style="padding:100px;"><CENTER>No Activity Selected</CENTER></H1>')
+        self.layout = QtWidgets.QGridLayout(self)
+
+        self.webengine = QWebEngineView()
+        self.webengine.setHtml('<H1 style="padding:100px;"><CENTER>No Activity Selected</CENTER></H1>')
+
+        self.label = QtWidgets.QLabel('Test Label', alignment=QtCore.Qt.AlignCenter)
+        self.label.setStyleSheet("max-height: 20px;")
+
+        self.layout.addWidget(self.label, 0, 0)
+        self.layout.addWidget(self.webengine, 1, 0)
 
     def set_activity(self, activity: Activity):
         """
@@ -50,4 +59,4 @@ class ActivityMapWidget(QWebEngineView):
         # update the map
         data = io.BytesIO()
         f_map.save(data, close_file=False)
-        self.setHtml(data.getvalue().decode())
+        self.webengine.setHtml(data.getvalue().decode())

@@ -1,5 +1,5 @@
 from PySide6 import QtCore, QtWidgets
-from supertl.ui import WorkoutCalendar, ActivityMapWidget, ActivityButtons
+from supertl.ui import ActivityMapWidget, SuperTLSidebarFrame, ActivityFilterSelectionWidget
 from supertl.Data import Activity
 
 class SuperTLApp(QtWidgets.QWidget):
@@ -8,24 +8,29 @@ class SuperTLApp(QtWidgets.QWidget):
 
         self.layout = QtWidgets.QGridLayout(self)
 
-        self.workout_calendar = WorkoutCalendar.WorkoutCalendar()
-        self.layout.addWidget(self.workout_calendar,0,0)
+        self.filter = ActivityFilterSelectionWidget.ActivityFilterSelectionWidget()
+        self.layout.addWidget(self.filter, 0, 0)
 
-        self.activity_buttons = ActivityButtons.ActivityButtons()
-        self.layout.addWidget(self.activity_buttons,1,0)
+        self.mainview = QtWidgets.QFrame()
+        self.mainview_layout = QtWidgets.QGridLayout(self.mainview)
+
+        self.sidebar = SuperTLSidebarFrame.SuperTLSidebarFrame()
+        self.mainview_layout.addWidget(self.sidebar,0,0)
 
         self.selected_file = ""
         self.selected_file_text = QtWidgets.QLabel("No File",
                                      alignment=QtCore.Qt.AlignCenter)
         self.selected_file_text.setStyleSheet("font-size: 20px;")
-        self.layout.addWidget(self.selected_file_text,1,1)
+        self.mainview_layout.addWidget(self.selected_file_text,1,1)
 
         self.map_view = ActivityMapWidget.ActivityMapWidget()
         # this doesn't work
         # self.map_view.setStyleSheet("margin: 0px 5px 10px 0px;" +
         #                             "border: 10px solid '#FF0000';"+
         #                             "padding: 200px 100px;")
-        self.layout.addWidget(self.map_view, 0,1)
+        self.mainview_layout.addWidget(self.map_view, 0,1)
+
+        self.layout.addWidget(self.mainview)
 
         # place to render a graph
         # place to display the workout summary

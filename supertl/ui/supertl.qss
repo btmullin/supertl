@@ -3,24 +3,14 @@
 }
 
 QMainWindow {
-    background-color:fuchsia;
+    background-color: fuchsia;
     color: #eee
 }
 
 QWidget {
-    background-color:slategray;
+    background-color: slategray;
     color: "#eee";
     padding: 0px
-}
-
-QPushButton {
-    border-style: solid;
-    border-width: 3px;
-    border-color: lightgrey;
-    border-radius: 15px;
-    padding: 5px 0px;
-    margin: 3px 5px;
-    font-size: 20px;
 }
 
 QPushButton:hover {
@@ -31,7 +21,43 @@ QPushButton:pressed {
     background-color: #eee;
 }
 
-WorkoutCalendar {
-    margin: 10px 10px;
-    max-width: 400;
+WorkoutCalendarWidget {
+    border-style: solid;
+    border-width: 3px;
+    border-color: lightgray;
+    border-radius: 10px;
+}
+
+SuperTLSidebarFrame {
+    border-style: solid;
+    border-width: 3px;
+    border-color: lightgray;
+    border-radius: 10px;
+    max-width: 450px;
+}
+
+ActivityMapWidget {
+    border-style: solid;
+    border-width: 3px;
+    border-color: lightgray;
+    border-radius: 10px;
+    /* margin: 5px; */
+    padding: 10px;
+}
+
+ActivityButtonsFrame {
+    border-style: solid;
+    border-width: 3px;
+    border-color: lightgray;
+    border-radius: 10px;
+}
+
+ActivityButtonsFrame > QPushButton {
+    border-style: solid;
+    border-width: 3px;
+    border-color: lightgray;
+    border-radius: 10px;
+    padding: 3px 0px;
+    margin: 3px 5px;
+    font-size: 20px;
 }

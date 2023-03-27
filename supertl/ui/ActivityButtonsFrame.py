@@ -1,6 +1,6 @@
 from PySide6 import QtWidgets
 
-class ActivityButtons(QtWidgets.QFrame):
+class ActivityButtonsFrame(QtWidgets.QFrame):
     """
     WorkoutButtons displays a set of buttons that enable the addition/import/export/delete/etc
     of individual activites.
