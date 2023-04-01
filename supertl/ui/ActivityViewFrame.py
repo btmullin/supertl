@@ -13,6 +13,7 @@ class ActivityViewFrame(QtWidgets.QFrame):
         super().__init__()
 
         self.layout = QtWidgets.QSplitter(self, QtCore.Qt.Orientation.Horizontal)
+        self.layout.setHandleWidth(5)
 
         self.summary_frame = QtWidgets.QLabel("SUMMARY FRAME PLACEHOLDER")
         self.layout.addWidget(self.summary_frame)

@@ -17,13 +17,12 @@ class SuperTLApp(QtWidgets.QWidget):
         self.sidebar = SuperTLSidebarFrame.SuperTLSidebarFrame()
         self.mainview_layout.addWidget(self.sidebar,0,0)
 
-        self.selected_file = ""
-        self.selected_file_text = QtWidgets.QLabel("No File",
-                                     alignment=QtCore.Qt.AlignCenter)
-        self.selected_file_text.setStyleSheet("font-size: 20px;")
-        self.mainview_layout.addWidget(self.selected_file_text,1,1)
-
         self.activity_view = ActivityViewFrame.ActivityViewFrame()
+        self.activity_view.setObjectName("ttt")
+        self.mainview.setStyleSheet("QFrame#ttt {"+
+                                        "border-style: solid;"+
+                                        "border-width: 30px;"+
+                                        "}")
         self.mainview_layout.addWidget(self.activity_view, 0,1)
 
         self.layout.addWidget(self.mainview)
