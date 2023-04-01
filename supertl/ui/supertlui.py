@@ -23,7 +23,7 @@ class Ui_supertl_ui(object):
     def setupUi(self, supertl_ui):
         if not supertl_ui.objectName():
             supertl_ui.setObjectName(u"supertl_ui")
-        supertl_ui.resize(800, 600)
+        supertl_ui.resize(1985, 1383)
         supertl_ui.setMinimumSize(QSize(800, 600))
         self.verticalLayout = QVBoxLayout(supertl_ui)
         self.verticalLayout.setObjectName(u"verticalLayout")
