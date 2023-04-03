@@ -210,19 +210,6 @@
             <property name="styleSheet">
              <string notr="true">background-color: #0000FF;</string>
             </property>
-            <widget class="QPushButton" name="pushButton_7">
-             <property name="geometry">
-              <rect>
-               <x>540</x>
-               <y>270</y>
-               <width>85</width>
-               <height>28</height>
-              </rect>
-             </property>
-             <property name="text">
-              <string>PushButton</string>
-             </property>
-            </widget>
            </widget>
            <widget class="QFrame" name="activity_detail_frame">
             <property name="styleSheet">
@@ -244,37 +231,11 @@
                 <property name="styleSheet">
                  <string notr="true">background-color: #FFFF00;</string>
                 </property>
-                <widget class="QPushButton" name="pushButton_10">
-                 <property name="geometry">
-                  <rect>
-                   <x>250</x>
-                   <y>200</y>
-                   <width>85</width>
-                   <height>28</height>
-                  </rect>
-                 </property>
-                 <property name="text">
-                  <string>PushButton</string>
-                 </property>
-                </widget>
                </widget>
-               <widget class="QWidget" name="activity_map_widget" native="true">
+               <widget class="ActivityMapWidget" name="activity_map_widget" native="true">
                 <property name="styleSheet">
                  <string notr="true">background-color: #00FFFF;</string>
                 </property>
-                <widget class="QPushButton" name="pushButton_11">
-                 <property name="geometry">
-                  <rect>
-                   <x>210</x>
-                   <y>200</y>
-                   <width>85</width>
-                   <height>28</height>
-                  </rect>
-                 </property>
-                 <property name="text">
-                  <string>PushButton</string>
-                 </property>
-                </widget>
                </widget>
               </widget>
              </item>
@@ -290,6 +251,14 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ActivityMapWidget</class>
+   <extends>QWidget</extends>
+   <header>supertl.ui.ActivityMapWidget</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

@@ -19,6 +19,8 @@ from PySide6.QtWidgets import (QApplication, QFrame, QGridLayout, QHBoxLayout,
     QPushButton, QSizePolicy, QSplitter, QVBoxLayout,
     QWidget)
 
+from supertl.ui.ActivityMapWidget import ActivityMapWidget
+
 class Ui_supertl_ui(object):
     def setupUi(self, supertl_ui):
         if not supertl_ui.objectName():
@@ -153,9 +155,6 @@ class Ui_supertl_ui(object):
         self.weekly_summary_widget = QWidget(self.splitter)
         self.weekly_summary_widget.setObjectName(u"weekly_summary_widget")
         self.weekly_summary_widget.setStyleSheet(u"background-color: #0000FF;")
-        self.pushButton_7 = QPushButton(self.weekly_summary_widget)
-        self.pushButton_7.setObjectName(u"pushButton_7")
-        self.pushButton_7.setGeometry(QRect(540, 270, 85, 28))
         self.splitter.addWidget(self.weekly_summary_widget)
         self.activity_detail_frame = QFrame(self.splitter)
         self.activity_detail_frame.setObjectName(u"activity_detail_frame")
@@ -170,16 +169,10 @@ class Ui_supertl_ui(object):
         self.activity_summary_widget = QWidget(self.splitter_2)
         self.activity_summary_widget.setObjectName(u"activity_summary_widget")
         self.activity_summary_widget.setStyleSheet(u"background-color: #FFFF00;")
-        self.pushButton_10 = QPushButton(self.activity_summary_widget)
-        self.pushButton_10.setObjectName(u"pushButton_10")
-        self.pushButton_10.setGeometry(QRect(250, 200, 85, 28))
         self.splitter_2.addWidget(self.activity_summary_widget)
-        self.activity_map_widget = QWidget(self.splitter_2)
+        self.activity_map_widget = ActivityMapWidget(self.splitter_2)
         self.activity_map_widget.setObjectName(u"activity_map_widget")
         self.activity_map_widget.setStyleSheet(u"background-color: #00FFFF;")
-        self.pushButton_11 = QPushButton(self.activity_map_widget)
-        self.pushButton_11.setObjectName(u"pushButton_11")
-        self.pushButton_11.setGeometry(QRect(210, 200, 85, 28))
         self.splitter_2.addWidget(self.activity_map_widget)
 
         self.gridLayout_2.addWidget(self.splitter_2, 0, 0, 1, 1)
@@ -210,8 +203,5 @@ class Ui_supertl_ui(object):
         self.pushButton_6.setText(QCoreApplication.translate("supertl_ui", u"PushButton", None))
         self.pushButton_8.setText(QCoreApplication.translate("supertl_ui", u"PushButton", None))
         self.pushButton_9.setText(QCoreApplication.translate("supertl_ui", u"PushButton", None))
-        self.pushButton_7.setText(QCoreApplication.translate("supertl_ui", u"PushButton", None))
-        self.pushButton_10.setText(QCoreApplication.translate("supertl_ui", u"PushButton", None))
-        self.pushButton_11.setText(QCoreApplication.translate("supertl_ui", u"PushButton", None))
     # retranslateUi
 

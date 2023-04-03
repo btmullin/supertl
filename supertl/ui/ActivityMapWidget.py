@@ -12,8 +12,8 @@ class ActivityMapWidget(QtWidgets.QFrame):
         QWebEngineView (_type_): _description_
     """
 
-    def __init__(self):
-        super().__init__()
+    def __init__(self, parent):
+        super().__init__(parent)
 
         self.layout = QtWidgets.QGridLayout(self)
 

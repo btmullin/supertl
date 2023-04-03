@@ -121,3 +121,11 @@ https://docs.python.org/3/tutorial/modules.html#packages
 Simple goal is to start the actual UI and grow it organically.  First UI would simply be a dialog to open a file and plot the graphs and map.
 
 Looking at PyQtWebEngine to show the map.
+
+### 2023-03-25
+
+https://doc.qt.io/archives/qt-4.8/stylesheet-reference.html#list-of-stylable-widgets
+
+### 2023-04-02
+
+https://stackoverflow.com/questions/26698628/mvc-design-with-qt-designer-and-pyqt-pyside
